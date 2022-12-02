@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | News homepage</title>
+</head>
+<body>
+<header>
+<img class="logo" src="assets/images/logo.svg" width="65" height="40" alt="">
+<div class="desktopHeader">
+  <a class="desktopHeader_link" href="#">Home</a> 
+  <a class="desktopHeader_link" href="#">New</a> 
+  <a class="desktopHeader_link" href="#">Popular</a>
+  <a class="desktopHeader_link" href="#">Trending</a>
+  <a class="desktopHeader_link" href="#">Categories</a>
+</div>
+ <details>
+  <summary class="menu" id="menuOpen"><img class='menu' src="assets/images/icon-menu.svg" width="40" height="17" alt=""></summary>
+  <div class="menu_detail" id="menuDetail">
+ <img class="menu_close"  id="menuClose" src="assets/images/icon-menu-close.svg" alt="" width="32" height="31">
+  <a class="menu_link" href="#">Home</a> 
+  <a class="menu_link" href="#">New</a> 
+  <a class="menu_link" href="#">Popular</a>
+  <a class="menu_link" href="#">Trending</a>
+  <a class="menu_link" href="#">Categories</a>
+</div>
+</details>
+</header>
+<main>
+  <div class="desktopFlex_1045wide">
+  <section class="primary">
+  <img class='main_img' src="assets/images/image-web-3-mobile.jpg" height="600" width="686" alt="">
+  <img class='desktop_main_img' src="assets/images/image-web-3-desktop.jpg" height="600" width="1460" alt="">
+<div class="desktopFlex">
+ <h1 class="main_title">The Bright Future of Web 3.0?</h1>
+<div>
+ <p class="main_explanation">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+  But is it really fulfilling its promise?</p>
+
+  <button class="main_link"> Read more</button>
+</div>
+</div>
+</section>
+<section class="secondary">
+  <h2 class="secondary_descript"> New </h2>
+
+  <h3 class="secondary_title">Hydrogen VS Electric Cars</h3>
+ <p class="secondary_explanation"> Will hydrogen-fueled cars ever catch up to EVs?</p>
+<hr>
+  <h3 class="secondary_title"> The Downsides of AI Artistry</h3>
+  <p class="secondary_explanation"> What are the possible adverse effects of on-demand AI image generation?</p>  
+<hr>
+  <h3 class="secondary_title">Is VC Funding Drying Up?</h3>
+  <p class="secondary_explanation"> Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+</section>
+</div>
+<section class="tertiary">
+<div class="tertiary_component">
+<img class="tertiary_img" src="assets/images/image-retro-pcs.jpg" height="254" width="200" alt="" >
+<div>
+  <h2 class="tertiary_bullet">01</h2>
+  <h4 class="tertiary_title">Reviving Retro PCs</h4>
+  <p class="tertiary_explanation"> What happens when old PCs are given modern upgrades?</p>
+</div>
+</div>
+<div class="tertiary_component">
+  <img class="tertiary_img" src="assets/images/image-top-laptops.jpg" height="254" width="200" alt="" >
+  <div>
+  <h2 class="tertiary_bullet">02</h2>
+  <h4 class="tertiary_title">Top 10 Laptops of 2022</h4>
+ <p class="tertiary_explanation"> Our best picks for various needs and budgets.</p>
+</div>
+</div>
+<div class="tertiary_component">
+  <img class="tertiary_img" src="assets/images/image-gaming-growth.jpg" height="254" width="200" alt="" >
+  <div>
+<h2 class="tertiary_bullet">03</h2> 
+<h4 class="tertiary_title">The Growth of Gaming</h4>
+<p class="tertiary_explanation" > How the pandemic has sparked fresh opportunities.</p>
+</div>
+</div>
+</section>
+</main>
+<footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Chyunjet</a>.
+  </div>
+</footer>
+<script>
+  //Close menu when clicking the cross in menu
+const menuOpen=document.getElementById("menuOpen")  
+const menuClose= document.getElementById("menuClose");
+const menuDetail= document.getElementById("menuDetail")
+menuClose.addEventListener("click", () => {
+  menuDetail.style.display="none";
+});
+menuOpen.addEventListener("click", ()=>{
+  if(menuDetail.style.display="none"){menuDetail.style.display="block"}
+})
+//Close menu when min_width=710px
+const  minWidth710px= window.matchMedia("(min-width: 710px)")
+function wideMenuClose(minWidth710px) {
+  if(minWidth710px.matches){ menuDetail.style.display="none"}
+  }
+wideMenuClose(minWidth710px)
+minWidth710px.addListener(wideMenuClose)
+  </script>
+</body>
+
+</html>
